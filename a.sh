@@ -74,10 +74,10 @@ echo "Đang khởi chạy máy ảo..."
 echo "Đã khởi động VM thành công vui lòng tự cài ngrok và mở cổng 5900"
 sudo cpulimit -l 80 -- sudo kvm \
     -cpu host,+topoext,hv_relaxed,hv_spinlocks=0x1fff,hv-passthrough,+pae,+nx,kvm=on,+svm \
-    -smp 2,cores=2 \
+    -smp 2,cores=4 \
     -M q35,usb=on \
     -device usb-tablet \
-    -m 4G \
+    -m 8G \
     -device virtio-balloon-pci \
     -vga virtio \
     -net nic,netdev=n0,model=virtio-net-pci \
